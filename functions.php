@@ -1,8 +1,7 @@
 <?php
 
 //Function for loading site resources (styles, scripts)
-function academy_files()
-{
+function academy_files(){
 	wp_enqueue_script(
 		'academy-main-js',
 		get_theme_file_uri('/build/index.js'),
@@ -27,15 +26,12 @@ function academy_files()
 		get_theme_file_uri('/build/index.css')
 	);
 }
-
 add_action('wp_enqueue_scripts', 'academy_files');
 
-function academy_features()
-{
+function academy_features(){
 	//register_nav_menu('headerMenuLocation', 'Header Menu Location');
 	add_theme_support('title-tag');
 }
-
 add_action('after_setup_theme', 'academy_features');
 
 //https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700&display=swap
