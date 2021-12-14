@@ -1149,7 +1149,7 @@ body.admin-bar .search-overlay {
 	display: inline-block;
 	width: 200px;
 	margin-right: 15px;
-	background-color: #f95738;
+	background-color: #4b8dd8;
 	overflow: hidden;
 }
 .search-overlay .professor-card {
@@ -1172,10 +1172,10 @@ body.admin-bar .search-overlay {
 	left: 0;
 	right: 0;
 	padding: 3px 10px;
-	background-color: rgba(240, 54, 19, 0.85);
+	background-color: #0d3b66c7;
 }
 .professor-card:hover .professor-card__name {
-	background-color: rgba(215, 46, 14, 0.85);
+	background-color: #0a2e50c7;
 }
 .professor-card__list-item {
 	display: inline-block;

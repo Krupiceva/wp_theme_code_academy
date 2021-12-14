@@ -31,9 +31,14 @@ add_action('wp_enqueue_scripts', 'academy_files');
 function academy_features(){
 	//register_nav_menu('headerMenuLocation', 'Header Menu Location');
 	add_theme_support('title-tag');
+	add_theme_support('post-thumbnails');
+	add_image_size('teacherLandscape', 400, 260, true);
+	add_image_size('teacherPortrait', 480, 650, true);
 }
+
 add_action('after_setup_theme', 'academy_features');
 
+//Function for custom query for custom post types that have archives
 function academy_adjust_queries($query){
 	//Course post type query manipulation
 	if(!is_admin() AND is_post_type_archive('course') AND $query->is_main_query()){
