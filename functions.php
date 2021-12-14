@@ -34,6 +34,22 @@ function academy_features(){
 }
 add_action('after_setup_theme', 'academy_features');
 
-//https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700&display=swap
+function academy_adjust_queries($query){
+	if(!is_admin() AND is_post_type_archive('event') AND $query->is_main_query()){
+		$today = date('Ymd');
+		$query->set('meta_key', 'event_date');
+		$query->set('orderby', 'meta_value_num');
+		$query->set('order', 'ASC');
+		$query->set('meta_query', array(
+			array(
+				'key' => 'event_date',
+				'compare' => '>=',
+				'value' => $today,
+				'type' => 'numeric'
+			)
+		));
+	}
+}
+add_action('pre_get_posts', 'academy_adjust_queries');
 
 ?>
