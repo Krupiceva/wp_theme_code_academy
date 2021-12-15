@@ -34,6 +34,14 @@ function pageBanner($args = NULL){
 
 //Function for loading site resources (styles, scripts)
 function academy_files(){
+	$googleMapUrl = '//maps.googleapis.com/maps/api/js?key=' . GOOGLE_MAPS_API;
+	wp_enqueue_script(
+		'googleMap',
+		$googleMapUrl,
+		NULL,
+		'1.0',
+		true
+	);
 	wp_enqueue_script(
 		'academy-main-js',
 		get_theme_file_uri('/build/index.js'),
@@ -73,6 +81,11 @@ add_action('after_setup_theme', 'academy_features');
 
 //Function for custom query for custom post types that have archives
 function academy_adjust_queries($query){
+	//Camous post type query manipulation
+	if(!is_admin() AND is_post_type_archive('campus') AND $query->is_main_query()){
+		$query->set('posts_per_page', -1);
+	}
+
 	//Course post type query manipulation
 	if(!is_admin() AND is_post_type_archive('course') AND $query->is_main_query()){
 		$query->set('orderby', 'title');
