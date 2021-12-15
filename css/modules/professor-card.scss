@@ -12,7 +12,7 @@
   display: inline-block;
   width: 200px;
   margin-right: 15px;
-  background-color: $darkOrange;
+  background-color: #4b8dd8;
   overflow: hidden;
 
   .search-overlay & {
@@ -38,11 +38,11 @@
     left: 0;
     right: 0;
     padding: 3px 10px;
-    background-color: adjust-color($darkOrange, $alpha: -0.15, $lightness: -9%, $saturation: -6%);
+    background-color: #0d3b66c7;
   }
 
   &:hover &__name {
-    background-color: adjust-color($darkOrange, $alpha: -0.15, $lightness: -15%, $saturation: -6%);
+    background-color: #0a2e50c7;
   }
 
   &__list-item {
