@@ -38,7 +38,7 @@
   &__icon {
     margin-right: 10px;
     font-size: 1.8rem;
-    color: $darkOrange;
+    color: #0D3B66;
     @include atMedium {
       font-size: 2.5rem;
     }
@@ -67,7 +67,7 @@
     cursor: pointer;
     transition: all 0.3s;
     background-color: #fff;
-    color: $darkOrange;
+    color: #0D3B66;
     line-height: 0.7;
     @include atSmall {
       top: 18px;
@@ -98,7 +98,7 @@
   font-size: 1rem;
   font-weight: 300;
   outline: none;
-  color: $darkOrange;
+  color: #0D3B66;
   @include atSmall {
     font-size: 1.5rem;
   }

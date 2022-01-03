@@ -1,5 +1,15 @@
 <?php
 
+require get_theme_file_path('/inc/search-route.php');
+
+//Customization of WordPress REST API
+function academy_custom_rest(){
+	register_rest_field('post', 'authorName', array(
+		'get_callback' => function() {return get_the_author();}
+	));
+}
+add_action('rest_api_init', 'academy_custom_rest');
+
 //Function for dinamic page banner
 function pageBanner($args = NULL){
 
@@ -65,6 +75,11 @@ function academy_files(){
 		'academy_extra_styles',
 		get_theme_file_uri('/build/index.css')
 	);
+
+
+	wp_localize_script('academy-main-js', 'academyData', array(
+		'root_url' => get_site_url()
+	));
 }
 add_action('wp_enqueue_scripts', 'academy_files');
 

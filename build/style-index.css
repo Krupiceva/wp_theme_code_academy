@@ -1187,7 +1187,7 @@ body.admin-bar .search-overlay {
 .search-overlay__icon {
   margin-right: 10px;
   font-size: 1.8rem;
-  color: #F95738;
+  color: #0D3B66;
 }
 @media (min-width: 960px) {
   .search-overlay__icon {
@@ -1215,7 +1215,7 @@ body.admin-bar .search-overlay {
   cursor: pointer;
   transition: all 0.3s;
   background-color: #fff;
-  color: #F95738;
+  color: #0D3B66;
   line-height: 0.7;
 }
 @media (min-width: 530px) {
@@ -1247,7 +1247,7 @@ body.admin-bar .search-overlay {
   font-size: 1rem;
   font-weight: 300;
   outline: none;
-  color: #F95738;
+  color: #0D3B66;
 }
 @media (min-width: 530px) {
   .search-term {
