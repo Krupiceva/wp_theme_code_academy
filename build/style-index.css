@@ -484,23 +484,23 @@ li {
 
 /* Customize Login Screen */
 body.login .button-primary {
-  background-color: #F95738;
-  border-color: #f83e1a;
-  text-shadow: 0 -1px 1px #f8320c, 1px 0 1px #f8320c, 0 1px 1px #f8320c, -1px 0 1px #f8320c;
-  box-shadow: 0 1px 0 #ed2c07;
+  background-color: #0D3B66;
+  border-color: #0c355c;
+  text-shadow: 0 -1px 1px #0b3257, 1px 0 1px #0b3257, 0 1px 1px #0b3257, -1px 0 1px #0b3257;
+  box-shadow: 0 1px 0 #0a2f52;
 }
 
 body.login .button-primary:active,
 body.login .button-primary:focus,
 body.login .button-primary:hover {
-  background-color: #f8411d;
-  border-color: #F95738;
-  text-shadow: 0 -1px 1px #ed2c07, 1px 0 1px #ed2c07, 0 1px 1px #ed2c07, -1px 0 1px #ed2c07;
-  box-shadow: 0 1px 0 #de2907;
+  background-color: #0c365d;
+  border-color: #0D3B66;
+  text-shadow: 0 -1px 1px #0a2f52, 1px 0 1px #0a2f52, 0 1px 1px #0a2f52, -1px 0 1px #0a2f52;
+  box-shadow: 0 1px 0 #0a2c4d;
 }
 
 body.login {
-  background-color: #FAF0CA;
+  background-color: #4b82c38f;
 }
 
 .login h1 a {
