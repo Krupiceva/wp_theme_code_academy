@@ -608,12 +608,12 @@ body.login {
 .submit-note {
   color: #fff;
   border: none;
-  background-color: #F95738;
+  background-color: #0D3B66;
   line-height: 1.65;
 }
 
 .submit-note:hover {
-  background-color: #dd3f21;
+  background-color: #0e2132;
 }
 
 @media (min-width: 635px) {

@@ -14,12 +14,12 @@
 .submit-note {
   color: #fff;
   border: none;
-  background-color: $darkOrange;
+  background-color: $mainBlue;
   line-height: 1.65;
 }
 
 .submit-note:hover {
-  background-color: adjust-color($darkOrange, $lightness: -10%, $saturation: -20%);
+  background-color: adjust-color($mainBlue, $lightness: -10%, $saturation: -20%);
 }
 
 .edit-note,

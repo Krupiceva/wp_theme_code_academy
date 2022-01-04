@@ -7,6 +7,9 @@ function academy_custom_rest(){
 	register_rest_field('post', 'authorName', array(
 		'get_callback' => function() {return get_the_author();}
 	));
+	register_rest_field('note', 'userNoteCount', array(
+		'get_callback' => function() {return count_user_posts(get_current_user_id(), 'note');}
+	));
 }
 add_action('rest_api_init', 'academy_custom_rest');
 
@@ -78,7 +81,8 @@ function academy_files(){
 
 
 	wp_localize_script('academy-main-js', 'academyData', array(
-		'root_url' => get_site_url()
+		'root_url' => get_site_url(),
+		'nonce' => wp_create_nonce('wp_rest')
 	));
 }
 add_action('wp_enqueue_scripts', 'academy_files');
@@ -191,5 +195,24 @@ add_filter('login_headertext', 'ourLoginText');
 function ourLoginText(){
     return get_bloginfo('name');
 }
+
+//Force Note posts to be private
+function makeNotePrivate($data, $postarr){
+	if($data['post_type'] == 'note'){
+		if(count_user_posts(get_current_user_id(), 'note') > 4 AND !$postarr['ID'] ){
+			die("You have reached your note limit.");
+		}
+
+		$data['post_content'] = sanitize_textarea_field($data['post_content']);
+		$data['post_title'] = sanitize_text_field($data['post_title']);
+	}
+
+	if($data['post_type'] == 'note' AND $data['post_status'] != 'trash'){
+		$data['post_status'] = 'private';
+	}
+	return $data;
+}
+
+add_filter('wp_insert_post_data', 'makeNotePrivate', 10, 2);
 
 ?>
